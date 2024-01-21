@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import mockPostData from "../../mock/postCardMockData.json";
+// import mockPostData from "../../mock/postCardMockData.json";
+import mockPostData from '../../mock/PostMockData'
 import "./PostDetails.css";
-import image from "../../images/user.jpg";
+// import image from "../../images/user.jpg";
 import nature from "../../images/nature.jpg";
 
 interface Comment {
@@ -9,6 +10,7 @@ interface Comment {
   text: string;
   commentedUserName?: string;
   commentPostedDate?: string;
+  commentedUserImage?: string;
 }
 
 interface Post {
@@ -155,7 +157,7 @@ class PostDetail extends Component<{}, PostDetailState> {
             <div className="left-part">
               <div className="detail-page-user-image-container">
                 <img
-                  src={image}
+                  src={post.imageUrl}
                   alt={post.userName}
                   className="detail-page-user-image"
                 />
@@ -207,7 +209,7 @@ class PostDetail extends Component<{}, PostDetailState> {
                         key={comment.id}
                       >
                         <div className="commented-user-image">
-                          <img src={image} alt="" className="card-image" />
+                          <img src={comment.commentedUserImage} alt="" className="card-image" />
                         </div>
                         <div className="commented-user-info">
                           <div className="commented-user-name">

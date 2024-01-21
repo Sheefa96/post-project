@@ -2,7 +2,8 @@ import React, { Component, ChangeEvent } from "react";
 import { Link } from "react-router-dom";
 import CardComponent from "../../components/CardComponent/Card";
 import "./PostList.css";
-import mockData from "../../mock/postCardMockData.json";
+// import mockData from "../../mock/postCardMockData.json";
+import mockData from '../../mock/PostMockData'
 import ReactPaginate from "react-paginate";
 
 interface Post {

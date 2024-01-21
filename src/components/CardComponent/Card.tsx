@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import "./Card.css";
-import image from "../../images/user.jpg";
+// import image from "../../images/user.jpg";
 
 interface CardProps {
   title: string;
@@ -29,7 +29,7 @@ const CardComponent: React.FC<CardProps> = ({
         <div className="user-details">
           <div className="user-image">
             {/* <img src={imageUrl} alt="" className="card-image" /> */}
-            <img src={image} alt="" className="card-image" />
+            <img src={imageUrl} alt="" className="card-image" />
           </div>
           <div className="user-info">
             {userName && <div className="user-name">{userName}</div>}

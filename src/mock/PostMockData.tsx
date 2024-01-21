@@ -1,0 +1,768 @@
+import Profile from "../images/user.jpg";
+
+
+interface Comment {
+  id: number;
+  text: string;
+  commentedUserImage: string;
+  commentedUserName?: string;
+  commentPostedDate?: string;
+}
+interface MockData {
+  id: number;
+  title: string;
+  content: string;
+  imageUrl: string;
+  userName: string;
+  postedDate: string;
+  about: string;
+  likes: number;
+  comments: number;
+  commentText: Comment[];
+}
+
+const mockData: MockData[] = [
+  {
+    id: 1,
+    title: "Sample Post 1",
+    content:
+      "This is the content of the first post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "John Doe",
+    postedDate: "January 20, 2024",
+    about: "Short description 1",
+    likes: 25,
+    comments: 5,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 20, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 21, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 22 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 24, 2024",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Sample Post 2",
+    content:
+      "This is the content of the second post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Jhon Sinha",
+    postedDate: "January 21, 2024",
+    about: "Short description 2",
+    likes: 30,
+    comments: 2,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 21, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 21, 2024",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Sample Post 3",
+    content:
+      "This is the content of the third post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Alice Johnson",
+    postedDate: "January 22, 2024",
+    about: "Short description 3",
+    likes: 40,
+    comments: 2,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 22, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 22, 2024",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Sample Post 4",
+    content:
+      "This is the content of the fourth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Bob Smith",
+    postedDate: "January 23, 2024",
+    about: "Short description 4",
+    likes: 15,
+    comments: 6,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 25 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 25, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 26, 2024",
+      },
+      {
+        id: 6,
+        commentedUserImage: Profile,
+        text: "Sample comment 6",
+        commentedUserName: "disha",
+        commentPostedDate: "January 26, 2024",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Sample Post 5",
+    content:
+      "This is the content of the fifth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Eva Martinez",
+    postedDate: "January 24, 2024",
+    about: "Short description 5",
+    likes: 28,
+    comments: 4,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 24, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 24, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 25 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 25, 2024",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Sample Post 6",
+    content:
+      "This is the content of the sixth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Samuel Brown",
+    postedDate: "January 25, 2024",
+    about: "Short description 6",
+    likes: 22,
+    comments: 1,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 25, 2024",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "Sample Post 7",
+    content:
+      "This is the content of the seventh post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Emma White",
+    postedDate: "January 26, 2024",
+    about: "Short description 7",
+    likes: 35,
+    comments: 4,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 26, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 26, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 27 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 28, 2024",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "Sample Post 8",
+    content:
+      "This is the content of the eighth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Ryan Davis",
+    postedDate: "January 27, 2024",
+    about: "Short description 8",
+    likes: 18,
+    comments: 5,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 27, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 27, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 28, 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 28, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 29, 2024",
+      },
+    ],
+  },
+  {
+    id: 9,
+    title: "Sample Post 9",
+    content:
+      "This is the content of the ninth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Sophie Johnson",
+    postedDate: "January 28, 2024",
+    about: "Short description 9",
+    likes: 40,
+    comments: 3,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 28, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 28, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 28, 2024",
+      },
+    ],
+  },
+  {
+    id: 10,
+    title: "Sample Post 10",
+    content:
+      "This is the content of the tenth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl:Profile,
+    userName: "Max Turner",
+    postedDate: "January 29, 2024",
+    about: "Short description 10",
+    likes: 15,
+    comments: 1,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 30, 2024",
+      },
+    ],
+  },
+  {
+    id: 11,
+    title: "Sample Post 11",
+    content:
+      "This is the content of the eleventh post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Isabella Lee",
+    postedDate: "January 30, 2024",
+    about: "Short description 11",
+    likes: 32,
+    comments: 5,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 30, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 30, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 30, 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 31, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 31, 2024",
+      },
+    ],
+  },
+  {
+    id: 12,
+    title: "Sample Post 12",
+    content:
+      "This is the content of the twelfth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "David Martinez",
+    postedDate: "January 31, 2024",
+    about: "Short description 12",
+    likes: 20,
+    comments: 5,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 31, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 31, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 31, 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 31, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 31, 2024",
+      },
+    ],
+  },
+  {
+    id: 13,
+    title: "Sample Post 13",
+    content:
+      "This is the content of the thirteenth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Olivia Robinson",
+    postedDate: "February 1, 2024",
+    about: "Short description 13",
+    likes: 28,
+    comments: 2,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "February 1, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "February 1, 2024",
+      },
+    ],
+  },
+  {
+    id: 14,
+    title: "Sample Post 14",
+    content:
+      "This is the content of the 14th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "John Doe",
+    postedDate: "January 20, 2024",
+    about: "Short description 14",
+    likes: 25,
+    comments: 5,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 20, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 21, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 22 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 24, 2024",
+      },
+    ],
+  },
+  {
+    id: 15,
+    title: "Sample Post 15",
+    content:
+      "This is the content of the fifteenth post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Jhon Sinha",
+    postedDate: "January 21, 2024",
+    about: "Short description 15",
+    likes: 30,
+    comments: 2,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 21, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 21, 2024",
+      },
+    ],
+  },
+  {
+    id: 16,
+    title: "Sample Post 16",
+    content:
+      "This is the content of the 16th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Alice Johnson",
+    postedDate: "January 22, 2024",
+    about: "Short description 16",
+    likes: 40,
+    comments: 2,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 22, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 22, 2024",
+      },
+    ],
+  },
+  {
+    id: 17,
+    title: "Sample Post 17",
+    content:
+      "This is the content of the 17th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Bob Smith",
+    postedDate: "January 23, 2024",
+    about: "Short description 17",
+    likes: 15,
+    comments: 6,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 23, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 25 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 25, 2024",
+      },
+      {
+        id: 5,
+        commentedUserImage: Profile,
+        text: "Sample comment 5",
+        commentedUserName: "della",
+        commentPostedDate: "January 26, 2024",
+      },
+      {
+        id: 6,
+        commentedUserImage: Profile,
+        text: "Sample comment 6",
+        commentedUserName: "disha",
+        commentPostedDate: "January 26, 2024",
+      },
+    ],
+  },
+  {
+    id: 18,
+    title: "Sample Post 18",
+    content:
+      "This is the content of the 18th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Eva Martinez",
+    postedDate: "January 24, 2024",
+    about: "Short description 18",
+    likes: 28,
+    comments: 4,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 24, 2024",
+      },
+      {
+        id: 2,
+        commentedUserImage: Profile,
+        text: "Sample comment 2",
+        commentedUserName: "Shiva",
+        commentPostedDate: "January 24, 2024",
+      },
+      {
+        id: 3,
+        commentedUserImage: Profile,
+        text: "Sample comment 3",
+        commentedUserName: "Arun",
+        commentPostedDate: "January 25 2024",
+      },
+      {
+        id: 4,
+        commentedUserImage: Profile,
+        text: "Sample comment 4",
+        commentedUserName: "Mithun",
+        commentPostedDate: "January 25, 2024",
+      },
+    ],
+  },
+  {
+    id: 19,
+    title: "Sample Post 19",
+    content:
+      "This is the content of the 19th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl: Profile,
+    userName: "Samuel Brown",
+    postedDate: "January 25, 2024",
+    about: "Short description 19",
+    likes: 22,
+    comments: 1,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 25, 2024",
+      },
+    ],
+  },
+  {
+    id: 20,
+    title: "Sample Post 20th",
+    content:
+      "This is the content of the 20th post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed sed lectus nec libero luctus cursus. Vestibulum aliquet sapien at mauris euismod, ut efficitur orci consequat. Duis vestibulum nunc ut turpis tincidunt, et tincidunt lacus imperdiet. Aenean non justo sed mauris tincidunt auctor. Sed vel ultricies enim. Integer ut justo vitae justo dapibus cursus. Maecenas vel dictum felis. Fusce et sollicitudin erat. In hac habitasse platea dictumst. Vivamus a quam nisl. Nulla facilisi. In hendrerit vehicula quam eu gravida. Mauris aliquet tortor quis ante consequat, in vehicula neque lacinia. Phasellus nec dolor sit amet elit fringilla tristique. Proin at cursus purus, eu sollicitudin turpis. Nulla facilisi. Sed fermentum aliquam ligula, sit amet ultrices odio convallis eu. Fusce et bibendum libero. Vivamus auctor venenatis mauris, in aliquam purus suscipit at.",
+    imageUrl:Profile,
+    userName: "Samuel Brown",
+    postedDate: "January 25, 2024",
+    about: "Short description 20",
+    likes: 22,
+    comments: 1,
+    commentText: [
+      {
+        id: 1,
+        commentedUserImage: Profile,
+        text: "Sample comment 1",
+        commentedUserName: "Radha",
+        commentPostedDate: "January 25, 2024",
+      },
+    ],
+  },
+];
+export default mockData;
