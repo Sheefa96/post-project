@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-card {
+  padding: 40px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+}
+
+input {
+  display: block;
+  /* width: 100%; */
+  width: calc(100% - 20px);
+  padding: 10px;
+  /* margin-bottom: 20px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input::placeholder {
+  padding: 10px;
+  color: #aaa;
+}
+.logout-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #0056b3;
+}
+.card-heading {
+  /* color: #0056b3; */
+  text-align: center;
+}
+.error-message {
+  height:10px;
+  color: #ff0000;
+  font-size: 0.7rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.show-password-button-container{
+  width: fit-content;
+  height: 10px;
+  float: inline-end;
+  padding: 2px;
+}
+.password-toggle-button{
+  width: fit-content;
+  height: 10px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: #333;
+  font-size: 0.8em;
+}
+.password-toggle-button:hover{
+  width: fit-content;
+  height: 10px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: #333;
+  /* font-size: 1em; */
+}
+.password-toggle-button i{
+  font-size: 0.9em;
+}

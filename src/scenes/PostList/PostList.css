@@ -1,0 +1,197 @@
+.post-list-container {
+  /* max-width: 800px; */
+  width: 100%;
+  /* background-color: #f4f4f4; */
+  min-height: 100vh;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.filter-section {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  width: "100%";
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.filter-section input {
+  justify-content: center;
+  height: "50px";
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+}
+.filter-section input::placeholder {
+  padding-left: 10px;
+  transition: color 0.3s;
+}
+
+.filter-section input:hover {
+  border-color: #aaa;
+}
+
+.filter-section input:hover::placeholder {
+  color: #555;
+}
+.post-list-header {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* .card-list {
+  display: flex;
+  flex-wrap: wrap;
+} */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding:32px;
+  gap: 50px;
+  row-gap: 50px;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+}
+
+.card {
+  width: inherit;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* margin: 16px; */
+}
+/* .card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+/* .card-image {
+  width: 100%;
+  height: auto;
+} */
+
+/* .card-content {
+  padding: 16px;
+} */
+
+/* .card-title {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+} */
+
+/* .card-body {
+  font-size: 1em;
+  color: #555;
+} */
+/* .filter-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+  width: 100%; 
+  padding: 20px;
+}
+
+.filter-section input {
+  width: 300px; 
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s;
+} */
+
+.filter-section select {
+  height: 40px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.link-style {
+  color: inherit;
+  text-decoration: none;
+  width: auto;
+}
+
+.link-style:hover {
+  text-decoration: none;
+}
+.logout-button-container {
+  width: 120px;
+  height: 100%;
+  float: right;
+  padding: 2%;
+  /* background-color: #f4f4f4; */
+}
+/* .logout-button{
+  width:'100px'
+} */
+.pagination {
+  display: flex;
+  /* width: 100%; */
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+.pagination a {
+  color: #007bff;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .active a {
+  /* background-color: #007bff; */
+  color: #b70000;
+  border: 1px solid #b70000;
+}
+/* Add this CSS to your stylesheet or PostList.css file */
+.no-results-message {
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  /* background-color: #f8d7da; 
+  border: 1px solid #f5c6cb;  */
+  color: #721c24;
+  border-radius: 5px;
+  font-size: 4em;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+  }
+
+  .filter-section select {
+    margin-top: 10px;
+    margin-left: 0px;
+  }
+}
+

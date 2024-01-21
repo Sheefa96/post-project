@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Login from "./scenes/Login/Login";
+import PostList from './scenes/PostList/PostList';
+// import PostDetail from "./scenes/PostDetail/PostDetail";
+import { PrivateRoute } from './scenes/Auth/AuthGuard';
+import PostDetail from './scenes/PostDetail/PostDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/posts" element={<PrivateRoute><PostList /></PrivateRoute>} />
+      <Route path="/posts/:id" element={<PrivateRoute><PostDetail /></PrivateRoute>} />
+    </Routes>
   );
 }
 

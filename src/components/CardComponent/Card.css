@@ -1,0 +1,164 @@
+.card {
+  width: inherit;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  /* margin: 16px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-content {
+  padding: 5px 16px 16px 16px;
+}
+.card-title {
+  font-size: 1em !important;
+}
+/* .card-body {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical;
+} */
+/* .card-body {
+  width: 100%;
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body::after {
+  content: '';
+  flex-grow: 1;
+}
+
+.card-body p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+} */
+.card-body {
+  width: 100%;
+  max-height: calc(1.2em * 4); /* Set the max height to at least 4 lines */
+  line-height: 1.2em; 
+  overflow: hidden;
+  position: relative;
+}
+
+.card-body::after {
+  content: '...'; /* Display ellipsis */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 1em; /* Add some space between the text and the ellipsis */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%); /* Fade effect for the ellipsis */
+}
+.user-details {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 16px; */
+  padding: 16px 16px 5px 16px;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+}
+
+/* .user-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 50%; 
+  } */
+
+.user-name {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.posted-date {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #808080; /* Ash color */
+}
+.user-about {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #808080; /* Ash color */
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 16px; */
+  padding: 16px 16px 5px 16px;
+  justify-content: space-between;
+  /* justify-content: flex-end; */
+  float: end;
+}
+.comment-icon-button {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: context-menu;
+  color: #333;
+  font-size: 1em;
+}
+.comment-icon-button:hover{
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: context-menu;
+  /* transform: scale(1.5); */
+  color: #333;
+}
+button i {
+  color: #333;
+  font-size: 18px; 
+}
+.comments{
+  font-size: 0.9em;
+  font-weight: 500;
+  color: darkgray;
+}
+.view-post{
+  font-size: 0.9em;
+  font-weight: bold;
+  /* color: darkgray; */
+}
+.likes-icon-container{
+  color: #333;
+  font-size: 18px; 
+  cursor: context-menu;
+}
+.like-comment-container{
+  display: flex;
+  justify-content: space-between;
+  gap:5px;
+  cursor: context-menu;
+}

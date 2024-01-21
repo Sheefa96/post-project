@@ -1,0 +1,215 @@
+.post-detail-container {
+  min-height: 100vh;
+  width: 80%;
+  margin: 6% auto;
+  /* background-color: #f4f4f4; */
+}
+
+.post-content-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left-part {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.detail-page-user-image-container {
+  width: auto;
+  height: auto;
+}
+.detail-page-user-image {
+  width: 200px;
+  border-radius: 50%;
+}
+.detail-page-user-name {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.detail-page-user-about {
+  font-size: 1.2em;
+  color: #808080;
+  font-weight: 800;
+}
+.right-part {
+  flex: 3;
+  margin-left: 10%;
+}
+.detail-page-comment-section {
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 20px;
+  /* background-color: #f4f4f4;  */
+  /* padding:3% 5%; */
+}
+.detail-page-comment-section::-webkit-scrollbar {
+  width: 4px;
+}
+.detail-page-comment-section::-webkit-scrollbar-thumb {
+  background-color: #8e8c8c;
+  border-radius: 4px;
+}
+
+.detail-page-comment-section::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+/* .detail-page-comment{
+  display: flex;
+  height: 100%;
+  width:100%;
+} */
+.detail-page-comment-details {
+  background-color: #f4f4f4;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 20px 0;
+  padding: 2% 0;
+  border-radius: 10px;
+  position: relative;
+}
+.commented-user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+  margin-left: 16px;
+  text-align: top;
+}
+.commented-user-name {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+.comment-posted-date {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #808080;
+}
+.commented-user-about {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #808080;
+}
+.commented-user-info {
+  display: flex;
+  flex-direction: column;
+}
+.commented-text {
+  font-size: 0.9em;
+  margin-top: 8%;
+}
+.nature-image-container {
+  width: auto;
+  height: auto;
+}
+.nature-image {
+  width: 100%;
+  height: 300px;
+}
+.detail-page-logout-button-container {
+  margin-top: 15%;
+  width: 120px;
+  /* height: 100%; */
+  float: right;
+  /* padding:2%; */
+}
+.post-detail-page-icons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+.post-detail-comment-icon-button {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: #333;
+  font-size: 1em;
+}
+.post-detail-comment-icon-button:hover {
+  /* width: fit-content; */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  /* transform: scale(1.5); */
+  color: #333;
+}
+.post-detail-comment-icon-button i:hover {
+  transform: scale(1.5);
+}
+.post-detail-like-icon-button {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  color: #333;
+  font-size: 1em;
+}
+.post-detail-like-icon-button:hover {
+  width: fit-content;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  /* transform: scale(1.5); */
+  color: #333;
+}
+.post-detail-like-icon-button i:hover {
+  transform: scale(1.5);
+}
+.add-comment-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+.comment-textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  /* margin-bottom: 10px; */
+  border-radius: 8px;
+}
+
+.post-comment-button {
+  width: auto;
+  height: 20ox;
+  background-color: #007bff; 
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  /* transition: background-color 0.3s; */
+}
+.post-comment-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.post-detail-like-icon-button i.fas.fa-thumbs-up.liked {
+  color: blue; /* Change to your preferred color */
+}
+.comment-delete-icon-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 15px;
+  cursor: pointer;
+}
+.comment-delete-icon-container i:hover{
+  color: red;
+}
